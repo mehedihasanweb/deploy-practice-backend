@@ -61,14 +61,19 @@ require("dotenv").config();
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
 const app = express();
-const port = process.env.PORT || 3000; // Fallback to port 3000 if PORT is not set
+const port = process.env.PORT; // Fallback to port 3000 if PORT is not set
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
+// DB_user = mdmehedihasananik111;
+// DB_pass = Twq0ikA8MT1foBeE;
+
 // MongoDB connection
-const uri = `mongodb+srv://${process.env.DB_user}:${process.env.DB_pass}@cluster0.vggzedk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://${process.env.DB_user}:${process.env.DB_pass}@cluster0.gwuw88z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+console.log(port, uri);
 
 const client = new MongoClient(uri, {
   serverApi: {
